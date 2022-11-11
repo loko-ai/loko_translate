@@ -1,0 +1,56 @@
+[
+ {
+  "name": "Translate",
+  "description": "",
+  "group": "Custom",
+  "icon": "RiTranslate",
+  "click": null,
+  "events": null,
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "input",
+    "service": "translate",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "source",
+     "type": "asyncSelect",
+     "label": "Source Language",
+     "helper": "",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     },
+     "url": "http://localhost:9999/routes/loko_translate/languages"
+    },
+    {
+     "name": "target",
+     "type": "asyncSelect",
+     "label": "Target Language",
+     "helper": "",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     },
+     "url": "http://localhost:9999/routes/loko_translate/languages"
+    }
+   ]
+  }
+ }
+]

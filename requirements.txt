@@ -1,0 +1,7 @@
+sanic == 22.6.2
+sanic-openapi
+torch
+transformers
+loko-extensions
+sentencepiece
+sacremoses
