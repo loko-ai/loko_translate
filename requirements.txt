@@ -1,7 +1,7 @@
 sanic == 22.6.2
-sanic-openapi
-torch
-transformers
-loko-extensions
-sentencepiece
-sacremoses
+sanic-openapi == 21.12.0
+torch == 1.13.0
+transformers == 4.24.0
+loko-extensions == 0.0.2
+sentencepiece == 0.1.97
+sacremoses == 0.0.53

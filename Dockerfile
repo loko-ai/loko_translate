@@ -1,7 +1,7 @@
-FROM python:3.10-slim
+FROM lokoai/python_transformers
 EXPOSE 8080
-ADD ./requirements.lock /
-RUN pip install -r /requirements.lock
+ADD ./requirements.txt /
+RUN pip install -r /requirements.txt
 ARG GATEWAY
 ENV GATEWAY=$GATEWAY
 ADD . /plugin

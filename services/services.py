@@ -1,12 +1,11 @@
 import traceback
 
 import sanic
+from business.translation import translate
 from config.app_config import LANGUAGES
 from sanic import Sanic, Blueprint
 from sanic.exceptions import NotFound
 from sanic_openapi import swagger_blueprint
-
-from transformers import pipeline
 
 from loko_extensions.business.decorators import extract_value_args
 from utils.logger_utils import stream_logger
@@ -26,7 +25,7 @@ app.config["API_TITLE"] = name
 
 @bp.get('/languages')
 async def lang(request):
-    return sanic.json(LANGUAGES)
+    return sanic.json(sorted(LANGUAGES))
 
 
 @bp.post('/translate')
@@ -36,18 +35,7 @@ async def f(value, args):
     target = args.get('target')
     logger.debug(f'SOURCE: {source} - TARGET: {target}')
 
-    try:
-        trans_pipeline = pipeline(model=f'Helsinki-NLP/opus-mt-{source}-{target}')
-    except OSError as e:
-        if 'is not a valid model identifier' in str(e):
-            logger.debug('is not a valid model identifier')
-            trans_pipeline = pipeline(model=f'Helsinki-NLP/opus-mt-{source}-en')
-            value = [t['translation_text'] for t in trans_pipeline(value)]
-            trans_pipeline = pipeline(model=f'Helsinki-NLP/opus-mt-en-{target}')
-        else:
-            raise e
-
-    return sanic.json(trans_pipeline(value))
+    return sanic.json(translate(source, target, value))
 
 @app.exception(Exception)
 async def manage_exception(request, exception):
