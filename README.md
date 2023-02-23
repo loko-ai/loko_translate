@@ -34,3 +34,18 @@ Output:
 }
 ```
 
+
+## Configuration
+
+In the file *config.json* you can choose where to mount your huggingface volume.
+All the downloaded models will be saved in this directory:
+
+```
+{
+  "main": {
+    "volumes": [
+      "/var/opt/loko/huggingface:/root/.cache/huggingface"
+    ]
+  }
+}
+```
