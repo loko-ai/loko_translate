@@ -1,7 +1,7 @@
 [
  {
   "name": "Translate",
-  "description": "",
+  "description": "### Description\n**Translate** component translate text from one language to another.\n\n### Configuration\n\nYou can set your **Source** and **Target** language:\n\n\n- English (en)\n- Italian (it)\n- Spanish (es)\n- French (fr)\n- German (de)\n- Vietnamese (vi)\n- Arabic (ar)\n- Swedish (sv)\n- Chinese (zh) \n\n### Input\nThe component accepts text in the **Source Language**.\n\n**Example**:\n\nsource language: zh\n```\n\u6211\u53eb\u8428\u62c9\uff0c\u6211\u4f4f\u5728\u4f26\u6566\u3002\n```\n\n### Output\nThe output is the translated input.\n\n**Example**:\n\ntarget language: it\n```\n{\n    \"translation_text\": \"Mi chiamo Sarah, vivo a Londra.\"\n}\n```\n\n",
   "group": "Custom",
   "icon": "RiTranslate",
   "click": null,

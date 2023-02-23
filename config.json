@@ -1,7 +1,7 @@
 {
   "main": {
     "volumes": [
-      "var/opt/loko/huggingface:/root/.cache/huggingface"
+      "/var/opt/loko/huggingface:/root/.cache/huggingface"
     ]
   }
 }

@@ -1,5 +1,7 @@
 from loko_extensions.model.components import Component, save_extensions, Input, AsyncSelect
 
+from doc.doc import translate_doc
+
 source = AsyncSelect(name='source',
                      label='Source Language',
                      url='http://localhost:9999/routes/loko_translate/languages',
@@ -9,5 +11,6 @@ target = AsyncSelect(name='target',
                      url='http://localhost:9999/routes/loko_translate/languages',
                      required=True)
 input = Input(id='input', service='translate', to='output')
-translator = Component(name='Translate', args=[source, target], inputs=[input], icon='RiTranslate', configured=False)
+translator = Component(name='Translate', args=[source, target], inputs=[input], icon='RiTranslate', configured=False,
+                       description=translate_doc)
 save_extensions([translator])
