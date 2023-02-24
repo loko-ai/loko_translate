@@ -1,7 +1,7 @@
 <html><p><a href="https://loko-ai.com/" target="_blank" rel="noopener"> <img style="vertical-align: middle;" src="https://user-images.githubusercontent.com/30443495/196493267-c328669c-10af-4670-bbfa-e3029e7fb874.png" width="8%" align="left" /> </a></p>
 <h1>Loko Translate</h1><br></html>
 
-**Loko Translate** extension is built on top Transformers translation models.
+**Loko Translate** extension is built on top of Transformers translation models.
 
 You can set your **source** and **target** language:
 
